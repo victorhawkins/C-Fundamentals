@@ -1,0 +1,53 @@
+#include <cs50.h>
+#include <stdio.h>
+#include <math.h>
+void rePrompt(void);
+int main (void)
+{
+
+ 
+float f = get_float("Float: "); 
+   
+    
+    
+    
+ if (f < 0)
+ {
+  rePrompt();
+ }
+ else
+ {    
+    int change = round(f * 100);
+    int q = change / 25;
+    int d = (change % 25) / 10;
+    int n = (change % 25 % 10) / 5;
+    int p = (change % 5) / 1;
+    int t = q + d + n + p;
+    printf("%d\n", t);
+
+ }
+}    
+
+
+    
+    
+void rePrompt(void)
+{
+ float f = get_float("Float: ");
+ if (f < 0)
+ {
+     rePrompt();
+ }
+ else
+ {    
+    int change = round(f * 100);
+    int q = change / 25;
+    int d = (change % 25) / 10;
+    int n = (change % 25 % 10) / 5;
+    int p = (change % 5) / 1;
+    int t = q + d + n + p;
+    printf("%d\n", t);
+ }     
+}    
+
+
